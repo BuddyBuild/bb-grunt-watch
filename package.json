@@ -1,12 +1,12 @@
 {
-  "name": "grunt-contrib-watch",
+  "name": "bb-grunt-watch",
   "description": "Run predefined tasks whenever watched file patterns are added, changed or deleted",
   "version": "1.0.0",
   "author": {
-    "name": "Grunt Team",
-    "url": "http://gruntjs.com/"
+    "name": "Buddybuild",
+    "url": "http://buddybuild.com/"
   },
-  "repository": "gruntjs/grunt-contrib-watch",
+  "repository": "BuddyBuild/bb-grunt-watch",
   "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "async": "^1.5.0",
-    "gaze": "^1.1.0",
+    "fb-watchman": "^1.9.0",
     "lodash": "^4.0.0",
     "tiny-lr": "^0.2.1"
   },
@@ -37,6 +37,5 @@
   ],
   "files": [
     "tasks"
-  ],
-  "appveyor_id": "olyu3uhcq59avm8v"
+  ]
 }

@@ -130,7 +130,7 @@ module.exports = function(grunt) {
       return typeof config[key] !== 'string' && !Array.isArray(config[key]);
     }).map(function(target) {
       // Fail if any required config properties have been omitted
-      grunt.task.current.requiresConfig([name, target, 'files']);
+      grunt.task.current.requiresConfig([name, target, 'subscription']);
       var cfg = grunt.config([name, target]);
       cfg.name = target;
       cfg.options = self._options(cfg.options || {}, self.options);
