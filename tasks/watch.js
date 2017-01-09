@@ -87,7 +87,7 @@ module.exports = function(grunt) {
     watchers.push(watchman);
 
     const subscriptions = {};
-    watchman.command(['watch-project', process.cwd()], (err, rsp) => {
+    watchman.command(['watch', process.cwd()], (err, rsp) => {
 
         watchman.command(['clock', rsp.watch], (err, clockRsp) => {
 
