@@ -89,7 +89,15 @@ module.exports = function(grunt) {
     const subscriptions = {};
     watchman.command(['watch', process.cwd()], (err, rsp) => {
 
+        if (err) {
+            grunt.log.error(err);
+        }
+
         watchman.command(['clock', rsp.watch], (err, clockRsp) => {
+
+          if (err) {
+              grunt.log.error(err);
+          }
 
           targets.forEach(function(target, i) {
 
@@ -99,7 +107,7 @@ module.exports = function(grunt) {
               }
 
               // On changed/added/deleted
-              watchman.command(['subscribe', rsp.watch, target.name, target.subscription], (e, r) => {
+              watchman.command(['subscribe', rsp.watch, target.name, target.subscription], () => {
                 subscriptions[target.name] = target;
               });
           });
